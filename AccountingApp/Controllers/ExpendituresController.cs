@@ -46,6 +46,7 @@ namespace AccountingApp.Controllers
         // GET: Expenditures/Create
         public IActionResult Create()
         {
+            ViewData["ExpenditureType"] = new SelectList(Enum.GetValues(typeof(ExpenditureType)));
             return View();
         }
 
@@ -68,6 +69,8 @@ namespace AccountingApp.Controllers
         // GET: Expenditures/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["ExpenditureType"] = new SelectList(Enum.GetValues(typeof(ExpenditureType)));
+
             if (id == null || _context.Expenditures == null)
             {
                 return NotFound();
