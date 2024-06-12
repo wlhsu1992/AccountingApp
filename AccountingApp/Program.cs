@@ -33,3 +33,5 @@ app.MapControllerRoute(
     pattern: "{controller=Expenditures}/{action=Index}/{id?}");
 
 app.Run();
+
+public partial class Program { }
